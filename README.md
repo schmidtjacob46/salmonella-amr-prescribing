@@ -14,6 +14,8 @@ Antibiotic resistance is one of the most urgent public health challenges of our 
 
 This project tests that assumption by linking **state-level outpatient antibiotic prescribing rates** (CDC) to **AMR gene prevalence in clinical *Salmonella* isolates** (NCBI Pathogen Detection), controlling for population density and temporal trends across four US Census regions from 2015 to 2022.
 
+> **A note on scope:** Only ~10% of NCBI isolates could be mapped to a Census region (most list only "CDC" as collector with no state detail), so these are preliminary patterns rather than definitive conclusions. The findings point to interesting hypotheses worth investigating with richer geographic data.
+
 ---
 
 ## Key Findings
@@ -34,7 +36,7 @@ Denser regions (Northeast, South) actually showed *lower* AMR prevalence on aver
 
 ![Population Density vs. Salmonella AMR Resistance](popdensity_vs_resistance.png)
 
-This counterintuitive pattern likely reflects differences in agricultural intensity, livestock proximity, and healthcare surveillance infrastructure between rural and urban regions — factors not captured in outpatient Rx data alone.
+This counterintuitive pattern likely reflects differences in agricultural intensity, livestock proximity, and healthcare surveillance infrastructure between rural and urban regions. It may also partly reflect a **surveillance bias**: urban areas with denser clinical infrastructure tend to test a broader spectrum of patients, capturing milder cases that would go unsampled in rural settings. This could make urban regions appear to have lower AMR prevalence even if true resistance rates are similar.
 
 ---
 
@@ -89,6 +91,8 @@ One interesting challenge: only ~10% of NCBI isolates could be mapped to a Censu
 - AMR genotype (gene presence) is not equivalent to clinical phenotypic resistance
 - Ecological (region-level) correlations cannot establish individual-level causation
 - Outpatient human Rx data does not capture agricultural or veterinary antibiotic use, which is likely a major driver of food-borne pathogen AMR
+- **Surveillance intensity bias:** urban regions with denser healthcare infrastructure test more patients, including mild cases — this may inflate apparent AMR prevalence in rural/low-density regions relative to their true burden, and could partly explain the negative population density correlation
+- Population density from the 2020 Census is applied uniformly across all study years
 
 ---
 
